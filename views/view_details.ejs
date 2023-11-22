@@ -1,0 +1,32 @@
+<a href="/">Add</a>
+<h1>View Student Details</h1>
+<table border="1">
+  <tr>
+    <th>No</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Hobby</th>
+    <th>City</th>
+    <th>Message</th>
+    <th>Images</th>
+  </tr>
+  <% var i=1; for(var v of stData){ %>
+  <tr>
+    <td><%= i %></td>
+    <td><%= v.name %></td>
+    <td><%= v.age %></td>
+    <td><%= v.gender %></td>
+    <td><%= v.hobby %></td>
+    <td><%= v.city %></td>
+    <td><%= v.message %></td>
+    <td>
+      <img src="<%= v.adminImg%>" height="100" />
+    </td>
+    <td>
+      <a href="/deleteRecord/<%= v.id %>">Delete</a> ||
+      <a href="/updateRecord/<%= v.id %>">Update</a>
+    </td>
+  </tr>
+  <% i++;} %>
+</table>
